@@ -6,7 +6,7 @@
 - Modo de uso SIMPLES;
 
 // texto exemplo
-$string = '<p id="paragrafo1" class="paragrafo">O importante é oque mais importa! <br /> No final tudo é 0 e 1.</p>';
+$string = '\<p id="paragrafo1" class="paragrafo">O importante é oque mais importa! \<br /> No final tudo é 0 e 1.</p>';
 
 // Instancia a classe
 $strip = new StripTags;
@@ -22,7 +22,7 @@ $strip = new StripTags;
 ###### para permitir tags, vamos permitir o \<p>
 ## $nova_string = $strip->strip_tags($string, 'p');
 -- A saída vai ser
-  <p>O importante é oque mais importa!  No final tudo é 0 e 1.</p>
+  \<p>O importante é oque mais importa!  No final tudo é 0 e 1.</p>
 
   // O segundo parâmetro pode ser string ou array usage..
   $tags_permitidas = array('div', 'a', 'p');
@@ -33,7 +33,7 @@ $strip = new StripTags;
 ###### para permitir atributos, vamos permitir o atributo class
 ## $nova_string = $strip->strip_tags($string, 'p', 'class');
 -- A saída vai ser
-  <p class="paragrafo1">O importante é oque mais importa!  No final tudo é 0 e 1.</p>
+  \<p class="paragrafo1">O importante é oque mais importa!  No final tudo é 0 e 1.</p>
 
   // O terceiro parâmetro pode ser string ou array usage..
   $tags_permitidas = array('div', 'a', 'p');
@@ -49,22 +49,22 @@ $strip = new StripTags;
 -- mode usage simple
 
 // string exemple
-$string = 'The important is what matters most <br /> Not everything is 0 and 1';
+$string = '<p id="paragrafo1" class="paragrafo">The important is what matters most \<br /> Not everything is 0 and 1</p>';
 
 // Instance the class (invok)
 $strip = new StripTags;
 
 // put the string in the function of remove the tags
-## $nova_string = $strip->strip_tags($string);
+## $new_string = $strip->strip_tags($string);
 
 -- output will be
  The important is what matters most Not everything is 0 and 1.
 
 
 ###### To allowed tags, let's allowed the \<p>
-## $nova_string = $strip->strip_tags($string, 'p');
+## $new_string = $strip->strip_tags($string, 'p');
 -- output will be
-  <p>The important is what matters most Not everything is 0 and 1.</p>
+  \<p>The important is what matters most Not everything is 0 and 1.</p>
 
   // the second parameter can be string or array, usage
   $tags_allowed = array('div', 'a', 'p');
@@ -74,7 +74,7 @@ $strip = new StripTags;
 ###### To allowed attributes, let's allowed the attribute class
 ## $new_string = $strip->strip_tags($string, 'p', 'class');
 -- output will be
-  <p class="paragrafo1">The important is what matters most Not everything is 0 and 1.</p>
+  \<p class="paragrafo1">The important is what matters most Not everything is 0 and 1.</p>
 
   // the third parameter can be string or array, usage
   $tags_allowed = array('div', 'a', 'p');
