@@ -9,7 +9,7 @@
 	}
 */
 
-class Plugins_Striptags {
+class Striptags {
 
 	/**
 	 * 
